@@ -1,17 +1,19 @@
-package PointOfSale;
+package devices;
 
 import javax.swing.JOptionPane;
 
+import model.Product;
+
 public class MonitorDevice {
-	public void showProduct(Product p) {
+	public static void showProduct(Product p) {
 		System.out.println(p.getName() + " " + p.getPrice());
 	}
 
-	public void showTotalCost(double sum) {
+	public static void showTotalCost(double sum) {
 		System.out.println("Total : " + sum);
 	}
 
-	public void showInfo(String message) {
+	public static void showInfo(String message) {
 		JOptionPane.showMessageDialog(null, message, "UWAGA:", JOptionPane.INFORMATION_MESSAGE);
 	}
 

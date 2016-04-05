@@ -1,4 +1,4 @@
-package PointOfSale;
+package model;
 
 import java.util.ArrayList;
 
@@ -9,13 +9,13 @@ public class ProductsDatabase {
 		productList = new ArrayList<>();
 	}
 
-	public ArrayList<Product> getProductList() {
+	public static ArrayList<Product> getProductList() {
 		return productList;
 	}
 
-	public int foundProduct(String barCode) {
+	public static int foundProduct(Barcode barcode) {
 		for (int i = 0; i < ProductsDatabase.productList.size(); ++i) {
-			if (ProductsDatabase.productList.get(i).getBarCode() == barCode)
+			if (ProductsDatabase.productList.get(i).getBarCode() == barcode)
 				return i;
 		}
 		return -1;

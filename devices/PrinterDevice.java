@@ -1,11 +1,13 @@
-package PointOfSale;
+package devices;
 
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import model.Product;
+
 public class PrinterDevice {
-	public void print(ArrayList<Product> list) {
+	public static void print(ArrayList<Product> list) {
 		String str="";
 		double sum = 0;
 		for (Product p : list) {

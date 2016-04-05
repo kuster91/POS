@@ -1,11 +1,11 @@
-package PointOfSale;
+package model;
 
 public class Product {
 	private String name;
 	private double price;
-	private String barCode;
+	private Barcode barCode;
 
-	public Product(String name, double price, String barCode) {
+	public Product(String name, double price, Barcode barCode) {
 		this.name = name;
 		this.price = price;
 		this.barCode = barCode;
@@ -19,7 +19,7 @@ public class Product {
 		return price;
 	}
 
-	public String getBarCode() {
+	public Barcode getBarCode() {
 		return barCode;
 	}
 
