@@ -1,5 +1,7 @@
 package PointOfSale;
 
+import javax.swing.JOptionPane;
+
 public class MonitorDevice {
 	public void showProduct(Product p) {
 		System.out.println(p.getName() + " " + p.getPrice());
@@ -10,7 +12,7 @@ public class MonitorDevice {
 	}
 
 	public void showInfo(String message) {
-		System.out.println(message);
+		JOptionPane.showMessageDialog(null, message, "UWAGA:", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }

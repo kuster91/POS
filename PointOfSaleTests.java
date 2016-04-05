@@ -4,29 +4,17 @@ import java.util.ArrayList;
 
 public class PointOfSaleTests {
 	public static void main(String args[]) {
-		Customer kowalski = new Customer();
+		Customer customer = new Customer();
 		ProductsDatabase database = new ProductsDatabase();
 		ArrayList<String> codes = new ArrayList<>();
-		makeDatabase(database);
-		makeCodeList(codes);
 		MonitorDevice monitor = new MonitorDevice();
 		PrinterDevice printer = new PrinterDevice();
 		ScannerDevice scanner = new ScannerDevice();
+		SimplePointOfSale pos = new SimplePointOfSale ();
 
-		for (String str : codes) {
-			if (str == "")
-				monitor.showInfo("Invalid bar-code");
-			else if (database.foundProduct(str) == -1)
-				monitor.showInfo("Product not found");
-			else {
-				monitor.showProduct(database.getProductList().get(database.foundProduct(str)));
-				kowalski.getShoppingList().add(database.getProductList().get(database.foundProduct(str)));
-			}
-
-		}
-		monitor.showTotalCost(kowalski.getTotalCost());
-		printer.print(kowalski.getShoppingList());
-
+		makeDatabase(database);
+		makeCodeList(codes);
+		pos.SingleSaleTest(customer, codes, database, printer, scanner, monitor);
 	}
 
 	public static void makeDatabase(ProductsDatabase database) {

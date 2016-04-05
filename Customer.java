@@ -9,7 +9,6 @@ public class Customer {
 	public Customer() {
 		shoppingList = new ArrayList<Product>();
 		setTotalCost();
-
 	}
 
 	public ArrayList<Product> getShoppingList() {
